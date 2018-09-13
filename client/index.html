@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.3.3/semantic.min.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.5.17/vue.js"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.js" crossorigin="anonymous" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.3.3/semantic.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.18.0/axios.js"></script>
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="app">
+        <!-- vue -->
+
+        <div class="ui segment">
+            <div class="ui container">
+                <div class="ui menu">
+
+                    <a class="item active">
+                        <h4>Live code</h4>
+                    </a>
+                    <div class="menu right">
+                        <div class="item" v-if="emailForm">
+                            <div class="ui input">
+                                <input placeholder="Email" type="text" v-model="formEmail">
+                            </div>
+                        </div>
+                        <div class="item" v-if="passwordForm">
+                            <div class="ui input">
+                                <input placeholder="Password" type="password" v-model="formPassword">
+                            </div>
+                        </div>
+                        <a class="item" v-on:click="login()" v-if="loginBtn">
+                            <p>Login</p>
+                        </a>
+                        <a class="item" v-if="registBtn">
+                            <p>Register</p>
+                        </a>
+                        <a class="item" v-on:click="logout()" v-if="logoutBtn">
+                            <p>Logout</p>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="ui container">
+            <div class="ui warning tiny message transition" v-if="notifWarn">
+                <i class="close icon"></i>
+                <div class="header">
+                    {{notifWarnVal}}
+                </div>
+            </div>
+            <div class="ui warning tiny message transition" v-if="notifSucc">
+                <i class="close icon"></i>
+                <div class="header">
+                    {{notifSuccVal}}
+                </div>
+            </div>
+        </div>
+
+        <!-- Modal -->
+
+        <!-- vue -->
+    </div>
+    <script src="./assets/script/script.js"></script>
+</body>
+
+</html>
